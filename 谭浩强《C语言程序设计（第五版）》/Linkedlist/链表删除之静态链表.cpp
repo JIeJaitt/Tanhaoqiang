@@ -67,7 +67,7 @@ struct Student
 			else
 			{
 				//当不是第一个结点时删除该结点的步骤 
-				p1->next=p1->next;
+				p->next=p1->next;
 				p1=p1->next;
 			}	    
 		 }
