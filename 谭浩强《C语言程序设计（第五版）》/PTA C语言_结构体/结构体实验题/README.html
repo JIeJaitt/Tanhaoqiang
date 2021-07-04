@@ -1,0 +1,67 @@
+有5个跳水运动员参加比赛，有6个裁判给运动员打分，分数值从0到10分之间，去掉一个最低分，再去掉一个最高分，4个剩余分值的平均数就是该名运动员的最终得分，按平均分值从高到低输出运动员的信息，包括：号码、姓名、平均分。（不考虑平均分相同情况）
+
+struct Diver
+
+{
+
+int num;    
+char name[20];    
+float score[6];    
+float aver;
+};
+
+函数接口定义：
+void input(struct Diver d[]);
+本函数输入运动员的信息，包括：号码、姓名、6个裁判的打分，并求出最终得分
+
+函数接口定义：
+void sort(struct Diver d[]);
+本函数将运动员按平均分值从高到低排序
+
+函数接口定义：
+void print(struct Diver d[]);
+本函数将d中的运动员信息输出，包括：号码 姓名 平均分
+
+裁判测试程序样例：
+在这里给出函数被调用进行测试的例子。例如：
+#include <stdio.h>
+#define N 5
+
+struct Diver
+{
+    int num;
+    char name[20];
+    float score[6];
+    float aver;
+};
+
+void input(struct Diver d[]);
+void sort(struct Diver d[]);
+void print(struct Diver *d);
+
+int main()
+{
+    struct Diver d[N], *p=d;
+    input(p);
+    sort(p);
+    print(p);
+    return 0;
+}
+
+/* 请在这里填写答案 */
+输入样例：
+在这里给出一组输入。例如：
+
+101 Guo 9.1 8.0 8.0 8.0 7.9 8.8
+102 Fu 9.0 8.1 8.1 8.1 8.0 9.1
+103 Luo 10.0 9.9 9.8 9.5 9.9 10.0
+104 Xiong 8.0 8.1 8.2 8.3 8.0 7.9
+105 Wang 7.9 7.8 8.1 9.0 8.8 8.6
+输出样例：
+在这里给出相应的输出。例如：
+
+103 Luo 9.90
+105 Wang 8.35
+102 Fu 8.33
+101 Guo 8.20
+104 Xiong 8.07
