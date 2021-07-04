@@ -1,0 +1,31 @@
+#include <stdio.h> 
+
+struct time
+{
+	int hh, mm, ss;
+};
+int main()
+{
+	struct time x; //定义时间结构体变量 x
+	scanf("%d:%d:%d", &x.hh, &x.mm, &x.ss);
+	int num_ss;
+	scanf("%d", &num_ss);
+	x.ss += num_ss;
+	if (x.ss >= 60) //判断秒 是否需要进位
+	{
+		x.ss -= 60;
+		x.mm++;
+	}
+	if (x.mm >= 60) //判断分 是否需要进位
+	{
+		x.mm -= 60;
+		x.hh++;
+	}
+	if (x.hh >= 24) //判断时是 否需要进位
+	{
+		x.hh -= 24;
+	}
+	printf("%02d:%02d:%02d", x.hh, x.mm, x.ss);
+ 
+	return 0;
+}
