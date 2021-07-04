@@ -52,3 +52,40 @@ it main()
 	 p2->next=NULL;
  	return(head);	
  }
+
+ //定义删除结点的的del函数
+ struct Student * del(struct Student * head,long num);
+ {
+     struct Student * p1, * p2;
+     if(head=NULL) 
+     {
+        printf("\nlist null! \n");
+        return(head);
+     } 
+     p1=head;
+     while(num!=p1->num && p1->next!=NULL)
+     {p2=p1;p1=p1->next;}
+     if(num==p1->num)
+     {
+         if(p1==head) head=p1->next;
+         else p2->next=p1->next;
+         printf("delete:%ld\n",num);
+         n=n-1;
+     }
+     else printf("%ld not been found! \n",num);
+     return(head);
+ }
+
+ //定义插入结点的insert函数
+ struct Student * insert(struct Student * head,struct)
+ {
+     struct Student * p0,* p1,* p2;
+     p1=head;
+     p0=stud;
+     if(head==NULL)
+     {head=p0;p0->next=NULl;}
+     else 
+     {
+         while((p0->num>p1->num))
+     }
+ }
